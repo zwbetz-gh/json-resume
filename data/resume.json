@@ -1,0 +1,113 @@
+{
+  "basics": {
+    "name": "Zachary Betz",
+    "label": "Software Developer",
+    "picture": "",
+    "email": "zwbetz@gmail.com",
+    "phone": "225-978-4949",
+    "website": "https://zwbetz.com",
+    "summary": "",
+    "location": {
+      "address": "25245 Denver St",
+      "postalCode": "70726",
+      "city": "Denham Springs",
+      "countryCode": "US",
+      "region": "Louisiana"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "zwbetz-gh",
+        "url": "https://github.com/zwbetz-gh"
+      },
+      {
+        "network": "Hugo Support Forum",
+        "username": "zwbetz",
+        "url": "https://discourse.gohugo.io/u/zwbetz/summary"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Geocent, LLC",
+      "position": "Systems Analyst",
+      "website": "https://www.geocent.com",
+      "startDate": "2016-02-08",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": [
+        "Developed functional and accessibility test suites using Selenium/Java",
+        "Wrote a diffing tool for AWS DMS using Bash/sqlplus CLI/psql CLI",
+        ""
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "",
+      "position": "",
+      "website": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Louisiana State University",
+      "area": "Information Systems and Decision Sciences",
+      "studyType": "Bachelor",
+      "startDate": "2011",
+      "endDate": "2015",
+      "gpa": "3.0",
+      "courses": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    }
+  ],
+  "publications": [
+    {
+      "name": "",
+      "publisher": "",
+      "releaseDate": "",
+      "website": "",
+      "summary": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Good",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "interests": [
+    {
+      "name": "",
+      "keywords": []
+    }
+  ],
+  "references": [
+    {
+      "name": "",
+      "reference": ""
+    }
+  ]
+}
