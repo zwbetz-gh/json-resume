@@ -37,8 +37,9 @@
       "summary": "",
       "highlights": [
         "Developed functional and accessibility test suites using Selenium/Java",
+        "Wrote a Jaspersoft Server reports param test framework using Bash/cURL",
         "Wrote a diffing tool for AWS DMS using Bash/sqlplus CLI/psql CLI",
-        ""
+        "Became the go-to guy for project documentation and common task automation"
       ]
     }
   ],
@@ -83,7 +84,7 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
+      "name": "Software Development",
       "level": "Good",
       "keywords": [
         "HTML",
