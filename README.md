@@ -1,6 +1,6 @@
 # json-resume
 
-My resume, in JSON
+My resume, in JSON. See https://jsonresume.org/schema/
 
 ## Development
 
