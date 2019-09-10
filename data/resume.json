@@ -8,9 +8,9 @@
     "website": "https://zwbetz.com",
     "summary": "",
     "location": {
-      "address": "25245 Denver St",
-      "postalCode": "70726",
-      "city": "Denham Springs",
+      "address": "",
+      "postalCode": "",
+      "city": "Baton Rouge",
       "countryCode": "US",
       "region": "Louisiana"
     },
@@ -32,26 +32,95 @@
       "company": "Geocent, LLC",
       "position": "Systems Analyst",
       "website": "https://www.geocent.com",
-      "startDate": "2016-02-08",
+      "startDate": "2016-02",
       "endDate": "Present",
       "summary": "",
       "highlights": [
-        "Developed functional and accessibility test suites using Selenium/Java",
-        "Wrote a Jaspersoft Server reports param test framework using Bash/cURL",
-        "Wrote a diffing tool for AWS DMS using Bash/sqlplus CLI/psql CLI",
-        "Became the go-to guy for project documentation and common task automation"
+        "Developed functional/accessibility test suites using Selenium/Java",
+        "Wrote a Jaspersoft Server reports test framework using Bash/cURL",
+        "Maintained clear, concise project documentation",
+        "Wrote a diffing tool for AWS DMS using Bash/sqlplus CLI/psql CLI"
+      ]
+    },
+    {
+      "company": "Capgemini",
+      "position": "Applications Consultant",
+      "website": "https://www.capgemini.com/",
+      "startDate": "2015-06",
+      "endDate": "2016-02",
+      "summary": "",
+      "highlights": [
+        "Authored the documentation for migration of apps/databases from Solaris/WebLogic app servers to Linux/JBOSS",
+        "Supported a real-time dashboard app which displayed generation/demand data to wholesale energy traders",
+        "Gathered requirements, designed, developed, and tested a Windows Forms/SQL Server proof-of-concept solution to manage boiler tube welds within plants. Used SSRS for reporting",
+        "Automated the deployment of a Maximo app using Rundeck. Reduced deployment time from 3 hrs to 40 mins",
+        "Engaged in tri-weekly calls with offshore India team to discuss project status and debug app/database/infrastructure issues"
+      ]
+    },
+    {
+      "company": "Framework IT Solutions",
+      "position": "Developer Intern",
+      "website": "",
+      "startDate": "2014-05",
+      "endDate": "2015-05",
+      "summary": "",
+      "highlights": [
+        "Led the API conversion of a sports society iPhone app from iOS 6 to iOS 7/8",
+        "Developed various construction equipment/sales rep reports using SSRS for a major equipment services client",
+        "Created stored procedures for data dumps, to be run on a nightly basis"
+      ]
+    },
+    {
+      "company": "Louisiana Highway Safety Research Group",
+      "position": "",
+      "website": "http://hsrg.lsu.edu/",
+      "startDate": "2013-08",
+      "endDate": "2014-05",
+      "summary": "",
+      "highlights": [
+        "Used Splunk to monitor the network for low traffic points so that the database backups would run at those times",
+        "Transitioned annual LA Crash Data Fact Book compilation from manual Excel process to automated, parameterized SSRS reports"
+      ]
+    },
+    {
+      "company": "Louisiana State University",
+      "position": "Lead Student Computer Techician",
+      "website": "https://www.lsu.edu/reslife/",
+      "startDate": "2011-08",
+      "endDate": "2013-05",
+      "summary": "",
+      "highlights": [
+        "Troubleshooted LSU’s wireless network and made requests for additional access points to be installed in low-coverage areas",
+        "Trained new employees on helpdesk processes and maintained knowledge management wiki",
+        "Repaired and maintained staff/student/lab computers and print servers",
+        "Created and distributed system images using Symantec Ghost"
+      ]
+    },
+    {
+      "company": "Louisiana State Employees' Retirement System",
+      "position": "Retirement Benefits Analyst",
+      "website": "https://lasersonline.org/",
+      "startDate": "2011-05",
+      "endDate": "2011-08",
+      "summary": "",
+      "highlights": [
+        "Analyzed Retirement Documents and Letters for correct criteria",
+        "Managed work baskets for Change of Address, Beneficiaries, Drop Accounts, Repayment of Refunds, and Refunds"
       ]
     }
   ],
   "volunteer": [
     {
-      "organization": "",
-      "position": "",
+      "organization": "DETEL Computer Solutions",
+      "position": "System Builder",
       "website": "",
-      "startDate": "",
-      "endDate": "",
+      "startDate": "2008-05",
+      "endDate": "2010-08",
       "summary": "",
-      "highlights": []
+      "highlights": [
+        "Custom built over 600 desktop and laptop computers",
+        "Assembled and installed SMART boards for various Louisiana schools"
+      ]
     }
   ],
   "education": [
@@ -89,7 +158,18 @@
       "keywords": [
         "HTML",
         "CSS",
-        "Javascript"
+        "JavaScript",
+        "SQL",
+        "Shell",
+        "Bash",
+        "Hugo",
+        "Java",
+        "C#",
+        "Jaspersoft",
+        "SSRS",
+        "Selenium",
+        "Technical Writing",
+        "Customer Service"
       ]
     }
   ],
