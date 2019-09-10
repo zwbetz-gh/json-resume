@@ -5,7 +5,7 @@
     "picture": "",
     "email": "zwbetz@gmail.com",
     "phone": "225-978-4949",
-    "website": "https://zwbetz.com",
+    "website": "https://zwbetz.com/",
     "summary": "",
     "location": {
       "address": "",
@@ -29,6 +29,17 @@
   },
   "work": [
     {
+      "company": "Moonlighting",
+      "position": "Software Developer",
+      "website": "https://zwbetz.com/",
+      "startDate": "2016-02",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": [
+        "Developed desktop apps for a local petroleum transport company via C#/WinForms, The company's accountant used these apps to import timesheet spreadsheets into QuickBooks, and export payroll spreadsheets"
+      ]
+    },
+    {
       "company": "Geocent, LLC",
       "position": "Systems Analyst",
       "website": "https://www.geocent.com",
@@ -36,10 +47,10 @@
       "endDate": "Present",
       "summary": "",
       "highlights": [
-        "Developed functional/accessibility test suites using Selenium/Java",
-        "Wrote a Jaspersoft Server reports test framework using Bash/cURL",
+        "Developed extensive functional/accessibility test suites via Selenium/Java",
+        "Wrote a Jaspersoft Server reports test framework via Bash/cURL",
         "Maintained clear, concise project documentation",
-        "Wrote a diffing tool for AWS DMS using Bash/sqlplus CLI/psql CLI"
+        "Wrote a diffing tool for AWS DMS to monitor the data replication of billions of records via SQL/Bash/sqlplus/psql"
       ]
     },
     {
