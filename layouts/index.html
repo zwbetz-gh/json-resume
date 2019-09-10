@@ -1,2 +1,18 @@
-{{ $resume := site.Data.resume }}
-{{ $resume }}
+<!doctype html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.Title }}</title>
+  <style>
+    {{ $css_normalize := resources.Get "css/normalize.css" }}
+    {{ $css_normalize.Content | safeCSS }}
+  </style>
+</head>
+<body>
+  {{ $resume := site.Data.resume }}
+  <h1>{{ $resume.basics.name }}</h1>
+  <br>
+  {{ $resume.basics }}
+</body>
+</html>
