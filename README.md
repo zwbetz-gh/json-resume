@@ -1,6 +1,6 @@
 # json-resume
 
-My resume, in JSON. See https://jsonresume.org/schema/
+My resume, in JSON
 
 ## For you
 
@@ -25,3 +25,10 @@ curl -O https://raw.githubusercontent.com/zwbetz-gh/json-resume/master/data/resu
     ```
     ./resume-build.sh
     ```
+
+## Credits
+
+Thank you to 
+
+- [Thomas Hardy](http://www.thomashardy.me.uk/free-responsive-html-css3-cv-template) for the resume template. 
+- The folks over at [JSON Resume](https://jsonresume.org/schema/)

@@ -29,7 +29,7 @@
   },
   "work": [
     {
-      "company": "Moonlighting",
+      "company": "Freelance",
       "position": "Software Developer",
       "website": "https://zwbetz.com/",
       "startDate": "2016-02",
@@ -83,7 +83,7 @@
     },
     {
       "company": "Louisiana Highway Safety Research Group",
-      "position": "",
+      "position": "Data Intern",
       "website": "http://hsrg.lsu.edu/",
       "startDate": "2013-08",
       "endDate": "2014-05",
@@ -174,11 +174,11 @@
         "Shell",
         "Bash",
         "Hugo",
-        "Java",
-        "C#",
-        "Jaspersoft",
-        "SSRS",
         "Selenium",
+        "Java",
+        "Jaspersoft",
+        "C#",
+        "SSRS",
         "Technical Writing",
         "Customer Service"
       ]
