@@ -19,11 +19,11 @@ curl -O https://raw.githubusercontent.com/zwbetz-gh/json-resume/master/data/resu
 1. Install Hugo
 1. Serve resume to `http://localhost:1313`
     ```
-    ./resume-serve.sh
+    ./util-serve.sh
     ```
 1. Build resume to `public/index.html`
     ```
-    ./resume-build.sh
+    ./util-build.sh
     ```
 
 ## Credits
