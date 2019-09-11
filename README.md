@@ -2,7 +2,14 @@
 
 My resume, in JSON. See https://jsonresume.org/schema/
 
-## Development
+## For you
+
+Get `resume.json`
+```
+curl -O https://raw.githubusercontent.com/zwbetz-gh/json-resume/master/data/resume.json
+```
+
+## For me
 
 1. Clone repo and change to it
     ```
