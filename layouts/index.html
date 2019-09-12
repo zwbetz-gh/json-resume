@@ -61,7 +61,11 @@
           <div class="sectionContent">
           {{ range $resume.work }}
             <article>
-              <h2>{{ printf "%s at %s" .position .company }}</h2>
+              {{ $position_company := "Freelance" }}
+              {{ if ne .company "Freelance" }}
+                {{ $position_company = printf "%s at %s" .position .company }}
+              {{ end }}
+              <h2>{{ $position_company }}</h2>
               <p class="subDetails">{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
               <p>
               {{ range .highlights }}
