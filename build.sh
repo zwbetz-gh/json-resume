@@ -11,4 +11,5 @@ cp data/resume.json public/
 hugo server --gc --disableFastRender &
 hugo_server_pid=$!
 wkhtmltopdf http://localhost:1313 public/resume.pdf
+# sudo google-chrome --no-sandbox --headless --print-to-pdf=public/resume.pdf http://localhost:1313
 kill $hugo_server_pid
