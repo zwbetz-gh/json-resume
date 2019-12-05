@@ -1,104 +1,140 @@
 {{ $resume := site.Data.resume }}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.Language.Lang }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="uswds-2.3.1/css/uswds.min.css">
     <title>{{ $resume.basics.name }}</title>
-    <style>
-      {{ $css := resources.Get "css/style.css" }}
-      {{ $css.Content | safeCSS }}
-    </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300">
   </head>
-  <body id="top">
-    <div id="cv" class="">
-      <div class="mainDetails">
-        <!-- <div id="headshot" class="">
-          <img src="headshot.jpg" alt="{{ $resume.basics.name }}" />
-        </div> -->
-
-        <div id="name">
-          <h1 class="">{{ $resume.basics.name }}</h1>
-          <h2 class="">{{ $resume.basics.label }}</h2>
+  <body>
+    <div class="grid-container border">
+      <div class="grid-row border-bottom">
+        <div class="grid-col">
+          <h1>{{ $resume.basics.name }}</h1>
+          <p><em>{{ $resume.basics.label }}</em></p>
         </div>
-
-        <div id="contactDetails" class="">
-          <ul>
-            <li>
-              <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a>
-            </li>
-            <li>
-              <a href="mailto:{{ $resume.basics.email }}" target="_blank">{{ $resume.basics.email }}</a>
-            </li>
-            <li>{{ $resume.basics.phone }}</li>
-          </ul>
-        </div>
-        <div class="clear"></div>
       </div>
-
-      <div id="mainArea" class="">
-        <section>
-          <div class="sectionTitle">
-            <h1>Work</h1>
-          </div>
-
-          <div class="sectionContent">
-          {{ range $resume.work }}
-            <article>
-              {{ $position_company := "Freelance" }}
-              {{ if ne .company "Freelance" }}
-                {{ $position_company = printf "%s at %s" .position .company }}
-              {{ end }}
-              <h2>{{ $position_company }}</h2>
-              <p class="subDetails">{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
-              <p>
-              {{ range .highlights }}
-                * {{ . }}
-                <br>
-              {{ end }}
-              </p>
-            </article>
-          {{ end }}
-          </div>
-          <div class="clear"></div>
-        </section>
-
-        <section>
-          <div class="sectionTitle">
-            <h1>Education</h1>
-          </div>
-
-          <div class="sectionContent">
-          {{ range $resume.education }}
-          <article>
-            <h2>{{ .institution }}</h2>
-            <p class="subDetails">{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
-            <p>
-              {{ printf "%s, %s" .area .studyType }}
-            </p>
-          </article>
-          {{ end }}
-          </div>
-          <div class="clear"></div>
-        </section>
-
-        <section>
-          <div class="sectionTitle">
-            <h1>Skills</h1>
-          </div>
-
-          <div class="sectionContent">
-            <ul class="keySkills">
-            {{ range $resume.skills }}
-              {{ range .keywords }}
-              <li>{{ . }}</li>
-              {{ end }}
-            {{ end }}
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Contact</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            <ul class="add-list-reset">
+              <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
+              <li><strong>Email:</strong> {{ $resume.basics.email }}</li>
+              <li><strong>Phone:</strong> {{ $resume.basics.phone }}</li>
             </ul>
-          </div>
-          <div class="clear"></div>
-        </section>
+          </p>
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Work</h2>
+        </div>
+        <div class="grid-col">
+          {{ range $resume.work }}
+            {{ $freelance := "Freelance" }}
+            {{ $position_company := $freelance }}
+            {{ if ne .company $freelance }}
+              {{ $position_company = printf "%s at %s" .position .company }}
+            {{ end }}
+            <h3>{{ $position_company }}</h3>
+            <p>{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
+            <p>
+              <ul class="add-list-reset">
+                {{ range .highlights }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </p>
+          {{ end }}
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Education</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            {{ range $resume.education }}
+              <h3>{{ .institution }}</h2>
+              <p>{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
+              <p>{{ printf "%s, %s" .area .studyType }}</p>
+            {{ end }}
+          </p>
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Certifications</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            <ul class="add-list-reset">
+              {{ range $resume.certifications }}
+                <li>{{ .name }}, {{ .date }}</li>
+              {{ end }}
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Awards</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            <ul class="add-list-reset">
+              {{ range $resume.awards }}
+                <li>{{ .title }}, {{ .date }}</li>
+              {{ end }}
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Writing Samples</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            <ul class="add-list-reset">
+              {{ range $resume.writingSamples }}
+                <li>{{ .name }}, <a href="{{ .url }}">{{ .url }}</a></li>
+              {{ end }}
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Profiles</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            <ul class="add-list-reset">
+              {{ range $resume.basics.profiles }}
+                <li>@{{ .username }} on <a href="{{ .url }}">{{ .network }}</a></li>
+              {{ end }}
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="grid-row border-bottom">
+        <div class="grid-col-3">
+          <h2>Skills</h2>
+        </div>
+        <div class="grid-col">
+          <p>
+            <ul class="add-list-reset">
+              {{ range $resume.skills }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </p>
+        </div>
       </div>
     </div>
   </body>
