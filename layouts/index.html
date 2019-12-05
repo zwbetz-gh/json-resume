@@ -10,16 +10,16 @@
   <body>
     <div class="grid-container border">
       <div class="grid-row border-bottom">
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <h1>{{ $resume.basics.name }}</h1>
           <p><em>{{ $resume.basics.label }}</em></p>
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Contact</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             <ul class="add-list-reset">
               <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
@@ -30,10 +30,10 @@
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Work</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           {{ range $resume.work }}
             {{ $freelance := "Freelance" }}
             {{ $position_company := $freelance }}
@@ -53,10 +53,10 @@
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Education</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             {{ range $resume.education }}
               <h3>{{ .institution }}</h2>
@@ -67,10 +67,10 @@
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Certifications</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             <ul class="add-list-reset">
               {{ range $resume.certifications }}
@@ -81,10 +81,10 @@
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Awards</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             <ul class="add-list-reset">
               {{ range $resume.awards }}
@@ -95,10 +95,10 @@
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Writing Samples</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             <ul class="add-list-reset">
               {{ range $resume.writingSamples }}
@@ -109,24 +109,24 @@
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Profiles</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             <ul class="add-list-reset">
               {{ range $resume.basics.profiles }}
-                <li>@{{ .username }} on <a href="{{ .url }}">{{ .network }}</a></li>
+                <li><strong>@{{ .username }}</strong> on <a href="{{ .url }}">{{ .network }}</a></li>
               {{ end }}
             </ul>
           </p>
         </div>
       </div>
       <div class="grid-row border-bottom">
-        <div class="grid-col-3">
+        <div class="tablet:grid-col-3">
           <h2>Skills</h2>
         </div>
-        <div class="grid-col">
+        <div class="tablet:grid-col">
           <p>
             <ul class="add-list-reset">
               {{ range $resume.skills }}
