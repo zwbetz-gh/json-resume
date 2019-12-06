@@ -6,6 +6,5 @@ My resume, in JSON.
 
 ## Credits
 
-- [JSON Resume](https://jsonresume.org/schema/) for the data model.
+- [JSON Resume](https://jsonresume.org/schema/) for the original data model.
 - [Hugo](https://gohugo.io) for HTML templating.
-- [wkhtmltopdf](https://wkhtmltopdf.org/) for HTML to PDF conversion.
