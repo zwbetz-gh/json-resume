@@ -23,7 +23,7 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="add-list-reset">
+            <ul class="">
               <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
               <li><strong>Email:</strong> {{ $resume.basics.email }}</li>
               <li><strong>Phone:</strong> {{ $resume.basics.phone }}</li>
@@ -46,7 +46,7 @@
             <h3>{{ $position_company }}</h3>
             <p>{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
             <p>
-              <ul class="add-list-reset">
+              <ul class="">
                 {{ range .highlights }}
                   <li>{{ . }}</li>
                 {{ end }}
@@ -77,8 +77,8 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="add-list-reset">
-              {{ range $resume.skills }}
+            <ul class="">
+              {{ range ($resume.skills | sort) }}
                 <li>{{ . }}</li>
               {{ end }}
             </ul>
@@ -92,7 +92,7 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="add-list-reset">
+            <ul class="">
               {{ range $resume.certifications }}
                 <li>{{ .name }}, {{ .date }}</li>
               {{ end }}
@@ -107,7 +107,7 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="add-list-reset">
+            <ul class="">
               {{ range $resume.awards }}
                 <li>{{ .title }}, {{ .date }}</li>
               {{ end }}
@@ -122,7 +122,7 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="add-list-reset">
+            <ul class="">
               {{ range $resume.writingSamples }}
                 <li>{{ .name }}, <a href="{{ .url }}">{{ .url }}</a></li>
               {{ end }}
@@ -137,7 +137,7 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="add-list-reset">
+            <ul class="">
               {{ range $resume.basics.profiles }}
                 <li><strong>@{{ .username }}</strong> on <a href="{{ .url }}">{{ .network }}</a></li>
               {{ end }}
