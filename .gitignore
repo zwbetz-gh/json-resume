@@ -1,2 +1,5 @@
 # Hugo
 resources/
+
+# Other
+.DS_Store
