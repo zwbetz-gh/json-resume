@@ -25,7 +25,11 @@
           <p>
             <ul class="">
               <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
-              <li><strong>Email:</strong> {{ $resume.basics.email }}</li>
+              {{ $emails := slice }}
+              {{ range $resume.basics.emails }}
+                {{ $emails = $emails | append (printf "%s (%s)" .email .type) }}
+              {{ end }}
+              <li><strong>Email:</strong> {{ delimit $emails " & " }}</li>
               <li><strong>Phone:</strong> {{ $resume.basics.phone }}</li>
             </ul>
           </p>
@@ -110,21 +114,6 @@
             <ul class="">
               {{ range $resume.certifications }}
                 <li>{{ .name }}, {{ .date }}</li>
-              {{ end }}
-            </ul>
-          </p>
-        </div>
-      </div>
-      
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
-          <h2>Awards</h2>
-        </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range $resume.awards }}
-                <li>{{ .title }}, {{ .date }}</li>
               {{ end }}
             </ul>
           </p>
