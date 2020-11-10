@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-./build.sh
+./task_build.sh
 
 hugo server --disableFastRender

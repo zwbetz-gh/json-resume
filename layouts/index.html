@@ -27,7 +27,7 @@
               <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
               {{ $emails := slice }}
               {{ range $resume.basics.emails }}
-                {{ $emails = $emails | append (printf "%s (%s)" .email .type) }}
+                {{ $emails = $emails | append (printf "(%s) <a href=\"mailto:%s\">%s</a> " .type .email .email ) }}
               {{ end }}
               <li><strong>Email:</strong> {{ delimit $emails " & " }}</li>
               <li><strong>Phone:</strong> {{ $resume.basics.phone }}</li>
@@ -128,7 +128,7 @@
           <p>
             <ul class="">
               {{ range $resume.writingSamples }}
-                <li>{{ .name }}, <a href="{{ .url }}">{{ .url }}</a></li>
+                <li>{{ .name }} <a href="{{ .url }}">{{ .url }}</a></li>
               {{ end }}
             </ul>
           </p>
