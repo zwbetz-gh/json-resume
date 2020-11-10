@@ -15,11 +15,11 @@
     },
     "emails": [
       {
-        "type": "work",
+        "type": "Work",
         "email": "zachary.betz@geocent.com"
       },
       {
-        "type": "personal",
+        "type": "Personal",
         "email": "zwbetz@gmail.com"
       }
     ],
