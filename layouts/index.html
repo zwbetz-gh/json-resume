@@ -13,7 +13,7 @@
       <div class="grid-row border-bottom-2px">
         <div class="tablet:grid-col">
           <h1>{{ $resume.basics.name }}</h1>
-          <p><em>{{ $resume.basics.label }}</em></p>
+          <p>{{ $resume.basics.label }}</p>
         </div>
       </div>
       
@@ -23,13 +23,9 @@
         </div>
         <div class="tablet:grid-col">
           <p>
-            <ul class="">
+            <ul>
               <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
-              {{ $emails := slice }}
-              {{ range $resume.basics.emails }}
-                {{ $emails = $emails | append (printf "(%s) <a href=\"mailto:%s\">%s</a> " .type .email .email ) }}
-              {{ end }}
-              <li><strong>Email:</strong> {{ delimit $emails " & " }}</li>
+              <li><strong>Email:</strong> <a href="mailto:{{ $resume.basics.email }}">{{ $resume.basics.email }}</a></li>
               <li><strong>Phone:</strong> {{ $resume.basics.phone }}</li>
             </ul>
           </p>

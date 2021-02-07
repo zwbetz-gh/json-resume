@@ -6,5 +6,5 @@ My resume, in JSON
 
 ## Credits
 
-- [JSON Resume](https://jsonresume.org/schema/) for the original data model
+- [JSON Resume](https://jsonresume.org/schema/) for the original schema
 - [Hugo](https://gohugo.io) for HTML templating
