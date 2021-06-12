@@ -84,6 +84,21 @@
           </p>
         </div>
       </div>
+
+      <div class="grid-row border-bottom-2px">
+        <div class="tablet:grid-col-3">
+          <h2>Tools</h2>
+        </div>
+        <div class="tablet:grid-col">
+          <p>
+            <ul class="">
+              {{ range ($resume.tools | sort) }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </p>
+        </div>
+      </div>
       
       <div class="grid-row border-bottom-2px">
         <div class="tablet:grid-col-3">
