@@ -4,6 +4,13 @@ My resume, in JSON
 
 <https://raw.githubusercontent.com/zwbetz-gh/json-resume/master/data/resume.json>
 
+## Notes to Self
+
+After serving locally:
+
+- Build
+- Sync to personal site
+
 ## Credits
 
 - [JSON Resume](https://jsonresume.org/schema/) for the original schema
