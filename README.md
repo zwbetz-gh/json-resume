@@ -2,16 +2,15 @@
 
 My resume, in JSON
 
-<https://raw.githubusercontent.com/zwbetz-gh/json-resume/master/data/resume.json>
+## Links
 
-## Notes to Self
-
-After serving locally:
-
-- Build
-- Sync to personal site
+- [Source JSON](data/resume.json)
+- [Source template](layouts/index.html)
+- [Deployed HTML](https://zwbetz.com/resume/resume.html)
 
 ## Credits
 
-- [JSON Resume](https://jsonresume.org/schema/) for the original schema
+- [JSON Resume](https://jsonresume.org/schema/) for the original (now tweaked) schema
 - [Hugo](https://gohugo.io) for HTML templating
+- [USWDS](https://designsystem.digital.gov/) for the slick styles
+- [Bash](https://www.gnu.org/software/bash/manual/bash.html) because why remember things, when you can script them
