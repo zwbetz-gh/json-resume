@@ -11,6 +11,6 @@ My resume, in JSON
 ## Credits
 
 - [JSON Resume](https://jsonresume.org/schema/) for the original (now tweaked) schema
-- [Hugo](https://gohugo.io) for HTML templating
-- [USWDS](https://designsystem.digital.gov/) for the slick styles
+- [Hugo](https://gohugo.io) for the HTML templating
+- [Bootstrap](https://getbootstrap.com/) for the styles
 - [Bash](https://www.gnu.org/software/bash/manual/bash.html) because why remember things, when you can script them
