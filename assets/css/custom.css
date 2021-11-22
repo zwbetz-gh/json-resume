@@ -11291,11 +11291,17 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 /* resume */
 
 .resume {
-  padding: 1rem;
+  padding-top: 0.5rem;
   border: 2px solid;
 }
 
-.resume-border-bottom {
+.resume-section {
+  padding: 0.5rem;
   border-bottom: 2px solid;
   margin-bottom: 1rem;
+}
+
+.resume-section:last-child {
+  border-bottom: none;
+  margin-bottom: inherit;
 }
