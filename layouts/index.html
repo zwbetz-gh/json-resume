@@ -1,163 +1,157 @@
 {{ $resume := site.Data.resume }}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ site.Language.Lang }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="uswds-2.3.1/css/uswds.min.css">
+    {{ hugo.Generator }}
     {{ $title := printf "%s | %s" $resume.basics.name $resume.basics.label }}
+    {{ $customCss := resources.Get "css/custom.css"
+      | fingerprint
+      | minify }}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{{ $title }}</title>
+    <style>
+      {{ $customCss.Content | safeCSS }}
+    </style>
   </head>
   <body>
-    <div class="grid-container border-2px">
+    <div class="container resume resume-border">
       
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col">
+      <div class="row resume-border-bottom">
+        <div class="col">
           <h1>{{ $title }}</h1>
           <p>{{ $resume.basics.summary }}</p>
         </div>
       </div>
       
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
           <h2>Contact</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul>
-              <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
-              <li><strong>Email:</strong> <a href="mailto:{{ $resume.basics.email }}">{{ $resume.basics.email }}</a></li>
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul>
+            <li><strong>Website:</strong> <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a></li>
+            <li><strong>Email:</strong> <a href="mailto:{{ $resume.basics.email }}">{{ $resume.basics.email }}</a></li>
+          </ul>
         </div>
       </div>
       
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
           <h2>Work</h2>
         </div>
-        <div class="tablet:grid-col">
+        <div class="col-md">
           {{ range $resume.work }}
             {{ $freelance := "Freelance" }}
             {{ $position_company := $freelance }}
             {{ if ne .company $freelance }}
               {{ $position_company = printf "%s at %s" .position .company }}
             {{ end }}
-            <h3>{{ $position_company }}</h3>
-            <p>{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
-            <p>
-              <ul class="">
-                {{ range .highlights }}
-                  <li>{{ . }}</li>
-                {{ end }}
-              </ul>
-            </p>
+            <strong>{{ $position_company }}</strong>
+            <br>
+            {{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}
+            <ul class="">
+              {{ range .highlights }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
           {{ end }}
         </div>
       </div>
       
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
           <h2>Education</h2>
         </div>
-        <div class="tablet:grid-col">
+        <div class="col-md">
           <p>
             {{ range $resume.education }}
-              <h3>{{ .institution }}</h2>
-              <p>{{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}</p>
-              <p>{{ printf "%s, %s" .area .studyType }}</p>
+              <strong>{{ .institution }}</strong>
+              <br>
+              {{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}
+              <br>
+              {{ printf "%s, %s" .area .studyType }}
             {{ end }}
           </p>
         </div>
       </div>
 
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
           <h2>Skills</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range ($resume.skills | sort) }}
-                <li>{{ . }}</li>
-              {{ end }}
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul class="">
+            {{ range ($resume.skills | sort) }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
         </div>
       </div>
 
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
           <h2>Tools</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range ($resume.tools | sort) }}
-                <li>{{ . }}</li>
-              {{ end }}
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul class="">
+            {{ range ($resume.tools | sort) }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
         </div>
       </div>
       
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
-          <h2>Security Clearances</h2>
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
+          <h2>Clearances</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range $resume.securityClearances }}
-                <li>{{ .name }}</li>
-              {{ end }}
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul class="">
+            {{ range $resume.securityClearances }}
+              <li>{{ .name }}</li>
+            {{ end }}
+          </ul>
         </div>
       </div>
 
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
           <h2>Certifications</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range $resume.certifications }}
-                <li>{{ .name }}, {{ .date }}</li>
-              {{ end }}
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul class="">
+            {{ range $resume.certifications }}
+              <li>{{ .name }}, {{ .date }}</li>
+            {{ end }}
+          </ul>
         </div>
       </div>
       
-      <div class="grid-row border-bottom-2px">
-        <div class="tablet:grid-col-3">
-          <h2>Writing Samples</h2>
+      <div class="row resume-border-bottom">
+        <div class="col-md-3">
+          <h2>Writing</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range $resume.writingSamples }}
-                <li>{{ .name }} <a href="{{ .url }}">{{ .url }}</a></li>
-              {{ end }}
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul class="">
+            {{ range $resume.writingSamples }}
+              <li>{{ .name }} <a href="{{ .url }}">{{ .url }}</a></li>
+            {{ end }}
+          </ul>
         </div>
       </div>
       
-      <div class="grid-row">
-        <div class="tablet:grid-col-3">
+      <div class="row">
+        <div class="col-md-3">
           <h2>Profiles</h2>
         </div>
-        <div class="tablet:grid-col">
-          <p>
-            <ul class="">
-              {{ range $resume.basics.profiles }}
-                <li><strong>@{{ .username }}</strong> on <a href="{{ .url }}">{{ .network }}</a></li>
-              {{ end }}
-            </ul>
-          </p>
+        <div class="col-md">
+          <ul class="">
+            {{ range $resume.basics.profiles }}
+              <li><strong>@{{ .username }}</strong> on <a href="{{ .url }}">{{ .network }}</a></li>
+            {{ end }}
+          </ul>
         </div>
       </div>
 
