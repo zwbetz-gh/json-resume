@@ -149,7 +149,11 @@
         <div class="col-md">
           <ul class="">
             {{ range $resume.writingSamples }}
-              <li>{{ .name }} <a href="{{ .url }}">{{ .url }}</a></li>
+              <p>
+                {{ .name }}
+                <br>
+                <a href="{{ .url }}">{{ .url }}</a>
+              </p>
             {{ end }}
           </ul>
         </div>
