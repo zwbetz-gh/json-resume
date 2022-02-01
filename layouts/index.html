@@ -51,7 +51,7 @@
             <strong>{{ $position_company }}</strong>
             <br>
             {{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}
-            <ul class="">
+            <ul>
               {{ range .highlights }}
                 <li>{{ . }}</li>
               {{ end }}
@@ -82,7 +82,7 @@
           <h2>Skills</h2>
         </div>
         <div class="col-md">
-          <ul class="">
+          <ul>
             {{ range ($resume.skills | sort) }}
               <li>{{ . }}</li>
             {{ end }}
@@ -95,7 +95,7 @@
           <h2>Tools</h2>
         </div>
         <div class="col-md">
-          <ul class="">
+          <ul>
             {{ range ($resume.tools | sort) }}
               <li>{{ . }}</li>
             {{ end }}
@@ -108,7 +108,7 @@
           <h2>Clearances</h2>
         </div>
         <div class="col-md">
-          <ul class="">
+          <ul>
             {{ range $resume.securityClearances }}
               <li>{{ .name }}</li>
             {{ end }}
@@ -121,7 +121,7 @@
           <h2>Certifications</h2>
         </div>
         <div class="col-md">
-          <ul class="">
+          <ul>
             {{ range $resume.certifications }}
               <li>{{ .name }}, {{ .date }}</li>
             {{ end }}
@@ -134,11 +134,13 @@
           <h2>Awards</h2>
         </div>
         <div class="col-md">
-          <ul class="">
-            {{ range $resume.awards }}
-              <li>{{ .title }}, {{ .awarder }}, {{ .date }}</li>
-            {{ end }}
-          </ul>
+          {{ range $resume.awards }}
+            <p>
+              <strong>{{ .title }}</strong>
+              <br>
+              {{ .awarder }}, {{ .date }}
+            </p>
+          {{ end }}
         </div>
       </div>
 
@@ -147,15 +149,13 @@
           <h2>Writing</h2>
         </div>
         <div class="col-md">
-          <ul class="">
-            {{ range $resume.writingSamples }}
-              <p>
-                {{ .name }}
-                <br>
-                <a href="{{ .url }}">{{ .url }}</a>
-              </p>
-            {{ end }}
-          </ul>
+          {{ range $resume.writingSamples }}
+            <p>
+              <strong>{{ .name }}</strong>
+              <br>
+              <a href="{{ .url }}">{{ .url }}</a>
+            </p>
+          {{ end }}
         </div>
       </div>
 
@@ -164,7 +164,7 @@
           <h2>Profiles</h2>
         </div>
         <div class="col-md">
-          <ul class="">
+          <ul>
             {{ range $resume.basics.profiles }}
               <li><strong>@{{ .username }}</strong> on <a href="{{ .url }}">{{ .network }}</a></li>
             {{ end }}
