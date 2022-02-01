@@ -17,14 +17,14 @@
   </head>
   <body>
     <div class="container resume">
-      
+
       <div class="row resume-section">
         <div class="col">
           <h1>{{ $title }}</h1>
           <p>{{ $resume.basics.summary }}</p>
         </div>
       </div>
-      
+
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Contact</h2>
@@ -36,7 +36,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Work</h2>
@@ -59,7 +59,7 @@
           {{ end }}
         </div>
       </div>
-      
+
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Education</h2>
@@ -102,7 +102,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Clearances</h2>
@@ -128,7 +128,20 @@
           </ul>
         </div>
       </div>
-      
+
+      <div class="row resume-section">
+        <div class="col-md-3">
+          <h2>Awards</h2>
+        </div>
+        <div class="col-md">
+          <ul class="">
+            {{ range $resume.awards }}
+              <li>{{ .title }}, {{ .awarder }}, {{ .date }}</li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Writing</h2>
@@ -141,7 +154,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Profiles</h2>
