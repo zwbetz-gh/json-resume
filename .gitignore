@@ -1,5 +1,2 @@
-# Hugo
-resources/
-
-# Other
 .DS_Store
+node_modules

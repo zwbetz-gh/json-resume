@@ -1,18 +1,27 @@
 {{ $resume := site.Data.resume }}
+
+{{ $title := printf "%s | %s" $resume.basics.name $resume.basics.label }}
+
+{{ $bootstrapCss := resources.Get "css/bootstrap.css" }}
+
+{{ $customCss := resources.Get "css/custom.css" }}
+
+{{ $bundleCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+  {{ $bundleCss = $bundleCss | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+
 <!doctype html>
 <html lang="{{ site.Language.Lang }}">
   <head>
     {{ hugo.Generator }}
-    {{ $title := printf "%s | %s" $resume.basics.name $resume.basics.label }}
-    {{ $customCss := resources.Get "css/custom.css"
-      | fingerprint
-      | minify }}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{{ $title }}</title>
     <style>
-      {{ $customCss.Content | safeCSS }}
+      {{ $bundleCss.Content | safeCSS }}
     </style>
   </head>
   <body>

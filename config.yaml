@@ -8,3 +8,5 @@ disableKinds:
 outputs:
   home:
     - HTML
+build:
+  writeStats: true

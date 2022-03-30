@@ -1,0 +1,32 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "body",
+      "br",
+      "code",
+      "div",
+      "h1",
+      "h2",
+      "head",
+      "html",
+      "li",
+      "meta",
+      "p",
+      "strong",
+      "style",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "col",
+      "col-md",
+      "col-md-3",
+      "container",
+      "resume",
+      "resume-section",
+      "row"
+    ],
+    "ids": null
+  }
+}

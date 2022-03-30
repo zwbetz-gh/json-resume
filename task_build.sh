@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # HTML
-hugo --cleanDestinationDir
+hugo --environment production --cleanDestinationDir
 mv public/index.html public/resume.html
 
 # JSON

@@ -2,4 +2,4 @@
 
 ./task_build.sh
 
-hugo serve --disableFastRender
+hugo serve --environment production
