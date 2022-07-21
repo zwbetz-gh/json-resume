@@ -15,3 +15,9 @@
   border-bottom: none;
   margin-bottom: inherit;
 }
+
+/* bootstrap tweaks */
+
+.container {
+  max-width: 992px;
+}
