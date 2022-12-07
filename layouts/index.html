@@ -67,7 +67,7 @@
             {{ end }}
             <strong>{{ $position_company }}</strong>
             <br>
-            {{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}
+            {{ printf "%s to %s" .startDate .endDate | safeHTML }}
             <ul>
               {{ range .highlights }}
                 <li>{{ . }}</li>
@@ -86,7 +86,7 @@
             {{ range $resume.education }}
               <strong>{{ .institution }}</strong>
               <br>
-              {{ printf "%s &mdash; %s" .startDate .endDate | safeHTML }}
+              {{ printf "%s to %s" .startDate .endDate | safeHTML }}
               <br>
               {{ printf "%s, %s" .area .studyType }}
             {{ end }}
