@@ -99,24 +99,19 @@
           <h2>Skills</h2>
         </div>
         <div class="col-md">
-          <ul>
-            {{ range ($resume.skills | sort) }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
+          {{ $sortedSkills := ($resume.skills | sort) }}
+          {{ delimit $sortedSkills ", " }}
         </div>
       </div>
+
 
       <div class="row resume-section">
         <div class="col-md-3">
           <h2>Tools</h2>
         </div>
         <div class="col-md">
-          <ul>
-            {{ range ($resume.tools | sort) }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
+          {{ $sortedTools := ($resume.tools | sort) }}
+          {{ delimit $sortedTools ", " }}
         </div>
       </div>
 
