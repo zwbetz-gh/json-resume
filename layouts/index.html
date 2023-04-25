@@ -120,31 +120,36 @@
         </div>
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Clearances</h2>
+      {{ with $resume.certificatsecurityClearancesions }}
+        <div class="row resume-section">
+          <div class="col-md-3">
+            <h2>Clearances</h2>
+          </div>
+          <div class="col-md">
+            <ul>
+              {{ range . }}
+                <li>{{ .name }}</li>
+              {{ end }}
+            </ul>
+          </div>
         </div>
-        <div class="col-md">
-          <ul>
-            {{ range $resume.securityClearances }}
-              <li>{{ .name }}</li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
+      {{ end }}
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Certifications</h2>
+      {{ with $resume.certifications }}
+        <div class="row resume-section">
+          <div class="col-md-3">
+            <h2>Certifications</h2>
+          </div>
+          <div class="col-md">
+            <ul>
+              {{ range . }}
+                <li>{{ .name }}, {{ .date }}</li>
+              {{ end }}
+            </ul>
+          </div>
         </div>
-        <div class="col-md">
-          <ul>
-            {{ range $resume.certifications }}
-              <li>{{ .name }}, {{ .date }}</li>
-            {{ end }}
-          </ul>
-        </div>
-      </div>
+      {{ end }}
+
 
       <div class="row resume-section">
         <div class="col-md-3">
