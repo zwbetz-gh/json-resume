@@ -198,7 +198,9 @@
         <div class="col-md">
           <ul>
             {{ range $resume.basics.profiles }}
-              <li><strong>@{{ .username }}</strong> on <a href="{{ .url }}">{{ .network }}</a></li>
+              <li>
+                <a href="{{ .url }}">{{ .username }}</a> on {{ .network }}
+              </li>
             {{ end }}
           </ul>
         </div>
