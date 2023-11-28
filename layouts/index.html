@@ -40,17 +40,35 @@
           <h2>Contact</h2>
         </div>
         <div class="col-md">
-          <ul>
-            <li>
-              <strong>Website:</strong>
-              <a href="{{ $resume.basics.website }}">{{ $resume.basics.website }}</a>
-            </li>
-            <li>
-              <strong>Email:</strong>
-              <code>{{ $resume.basics.email }}</code>
-              (Decode that Base64 string <a href="https://zwbetz.com/base64-tool/">here</a>)
-            </li>
-          </ul>
+          <strong>Email:</strong>
+          <a href="{{ $resume.basics.contact }}" target="_blank" rel="noreferrer">{{ $resume.basics.contact }}</a>
+        </div>
+      </div>
+
+      <div class="row resume-section">
+        <div class="col-md-3">
+          <h2>Skills</h2>
+        </div>
+        <div class="col-md">
+          {{ $sortedSkills := ($resume.skills | sort) }}
+          {{ delimit $sortedSkills ", " }}
+        </div>
+      </div>
+
+      <div class="row resume-section">
+        <div class="col-md-3">
+          <h2>Tools</h2>
+        </div>
+        <div class="col-md">
+          {{ $sortedLanguages := ($resume.tools.languages | sort) }}
+          {{ $sortedFrameworks := ($resume.tools.frameworks | sort) }}
+          {{ $sortedTooling := ($resume.tools.tooling | sort) }}
+
+          <strong>Languages:</strong> {{ delimit $sortedLanguages ", " }}
+          <br>
+          <strong>Frameworks:</strong> {{ delimit $sortedFrameworks ", " }}
+          <br>
+          <strong>Tooling:</strong> {{ delimit $sortedTooling ", " }}
         </div>
       </div>
 
@@ -91,34 +109,6 @@
               {{ printf "%s, %s" .area .studyType }}
             {{ end }}
           </p>
-        </div>
-      </div>
-
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Skills</h2>
-        </div>
-        <div class="col-md">
-          {{ $sortedSkills := ($resume.skills | sort) }}
-          {{ delimit $sortedSkills ", " }}
-        </div>
-      </div>
-
-
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Tools</h2>
-        </div>
-        <div class="col-md">
-          {{ $sortedLanguages := ($resume.tools.languages | sort) }}
-          {{ $sortedFrameworks := ($resume.tools.frameworks | sort) }}
-          {{ $sortedTooling := ($resume.tools.tooling | sort) }}
-
-          <strong>Languages:</strong> {{ delimit $sortedLanguages ", " }}
-          <br>
-          <strong>Frameworks:</strong> {{ delimit $sortedFrameworks ", " }}
-          <br>
-          <strong>Tooling:</strong> {{ delimit $sortedTooling ", " }}
         </div>
       </div>
 
@@ -177,7 +167,7 @@
             <p>
               <strong>{{ .name }}</strong>
               <br>
-              <a href="{{ .url }}">{{ .url }}</a>
+              <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .url }}</a>
             </p>
           {{ end }}
         </div>
@@ -192,7 +182,7 @@
             <p>
               <strong>{{ .name }}</strong>
               <br>
-              <a href="{{ .url }}">{{ .url }}</a>
+              <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .url }}</a>
             </p>
           {{ end }}
         </div>
@@ -206,7 +196,7 @@
           <ul>
             {{ range $resume.basics.profiles }}
               <li>
-                <a href="{{ .url }}">{{ .username }}</a> on {{ .network }}
+                <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .username }}</a> on {{ .network }}
               </li>
             {{ end }}
           </ul>
