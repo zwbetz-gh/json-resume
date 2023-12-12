@@ -50,8 +50,7 @@
           <h2>Skills</h2>
         </div>
         <div class="col-md">
-          {{ $sortedSkills := ($resume.skills | sort) }}
-          {{ delimit $sortedSkills ", " }}
+          {{ delimit $resume.skills  ", " }}
         </div>
       </div>
 
@@ -60,15 +59,11 @@
           <h2>Tools</h2>
         </div>
         <div class="col-md">
-          {{ $sortedLanguages := ($resume.tools.languages | sort) }}
-          {{ $sortedFrameworks := ($resume.tools.frameworks | sort) }}
-          {{ $sortedTooling := ($resume.tools.tooling | sort) }}
-
-          <strong>Languages:</strong> {{ delimit $sortedLanguages ", " }}
+          <strong>Languages:</strong> {{ delimit $resume.tools.languages ", " }}
           <br>
-          <strong>Frameworks:</strong> {{ delimit $sortedFrameworks ", " }}
+          <strong>Frameworks:</strong> {{ delimit $resume.tools.frameworks ", " }}
           <br>
-          <strong>Tooling:</strong> {{ delimit $sortedTooling ", " }}
+          <strong>Tooling:</strong> {{ delimit $resume.tools.tooling ", " }}
         </div>
       </div>
 
