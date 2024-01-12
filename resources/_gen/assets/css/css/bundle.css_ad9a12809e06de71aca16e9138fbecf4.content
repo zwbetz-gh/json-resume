@@ -11266,16 +11266,13 @@ textarea.form-control-lg {
 /*# sourceMappingURL=bootstrap.css.map *//* resume */
 
 .resume {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: 0.5rem;
-  border: 2px solid;
+  margin-top: 0.5rem;
 }
 
 .resume-section {
-  padding: 0.5rem;
-  border-bottom: 2px solid;
+  padding-bottom: 1rem;
   margin-bottom: 1rem;
+  border-bottom: 1px solid;
 }
 
 .resume-section:last-child {
@@ -11286,5 +11283,5 @@ textarea.form-control-lg {
 /* bootstrap tweaks */
 
 .container {
-  max-width: 992px;
+  max-width: 1000px;
 }
