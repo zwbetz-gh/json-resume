@@ -1,6 +1,7 @@
 {{ $resume := site.Data.resume }}
 
-{{ $title := printf "Resume for %s, %s" $resume.basics.name $resume.basics.label }}
+{{ $headTitle := printf "Resume for %s, %s" $resume.basics.name $resume.basics.label }}
+{{ $bodyTitle := printf "%s, %s" $resume.basics.name $resume.basics.label }}
 
 {{ $bootstrapCss := resources.Get "css/bootstrap.css" }}
 
@@ -20,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="canonical" href="{{ $resume.basics.resume }}">
-    <title>{{ $title }}</title>
+    <title>{{ $headTitle }}</title>
     <style>
       {{ $bundleCss.Content | safeCSS }}
     </style>
@@ -30,7 +31,7 @@
 
       <div class="row resume-section">
         <div class="col">
-          <h1>{{ $title }}</h1>
+          <h1>{{ $bodyTitle }}</h1>
           <p>{{ $resume.basics.summary }}</p>
         </div>
       </div>
