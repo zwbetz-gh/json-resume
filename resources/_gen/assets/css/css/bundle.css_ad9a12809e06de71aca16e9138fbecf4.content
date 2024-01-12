@@ -11266,6 +11266,8 @@ textarea.form-control-lg {
 /*# sourceMappingURL=bootstrap.css.map *//* resume */
 
 .resume {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding-top: 0.5rem;
   border: 2px solid;
 }
