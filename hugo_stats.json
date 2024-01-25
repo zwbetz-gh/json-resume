@@ -4,6 +4,7 @@
       "a",
       "body",
       "br",
+      "details",
       "div",
       "h1",
       "h2",
@@ -13,8 +14,10 @@
       "link",
       "meta",
       "p",
+      "script",
       "strong",
       "style",
+      "summary",
       "title",
       "ul"
     ],
@@ -24,6 +27,7 @@
       "col-md-3",
       "container",
       "resume",
+      "resume-highlights",
       "resume-section",
       "row"
     ],

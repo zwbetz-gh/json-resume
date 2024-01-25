@@ -9,8 +9,11 @@
 
 {{ $bundleCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
 
+{{ $mainJs := resources.Get "js/main.js" }}
+
 {{ if hugo.IsProduction }}
   {{ $bundleCss = $bundleCss | minify | fingerprint | resources.PostProcess }}
+  {{ $mainJs = $mainJs | minify | fingerprint }}
 {{ end }}
 
 <!doctype html>
@@ -82,11 +85,17 @@
             <strong>{{ $position_company }}</strong>
             <br>
             {{ printf "%s to %s" .startDate .endDate | safeHTML }}
-            <ul>
-              {{ range .highlights }}
-                <li>{{ . }}</li>
-              {{ end }}
-            </ul>
+            <details
+              class="resume-highlights"
+              {{ if .showHighlights }}open{{ end }}
+            >
+              <summary>Highlights</summary>
+              <ul>
+                {{ range .highlights }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </details>
           {{ end }}
         </div>
       </div>
@@ -156,7 +165,7 @@
 
       <div class="row resume-section">
         <div class="col-md-3">
-          <h2>Peer Feedback Samples</h2>
+          <h2>Peer Feedback</h2>
         </div>
         <div class="col-md">
           {{ range $resume.peerFeedback }}
@@ -200,5 +209,9 @@
       </div>
 
     </div>
+
+    <script>
+      {{ $mainJs.Content | safeJS }}
+    </script>
   </body>
 </html>

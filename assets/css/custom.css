@@ -15,6 +15,10 @@
   margin-bottom: inherit;
 }
 
+.resume-highlights {
+  margin-bottom: 1rem;
+}
+
 /* bootstrap tweaks */
 
 .container {
