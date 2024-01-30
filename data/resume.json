@@ -221,13 +221,7 @@
       "url": "https://zwbetz.com/make-a-hugo-blog-from-scratch/"
     }
   ],
-  "skills": [
-    "Software Development",
-    "Technical Writing",
-    "Process Improvement",
-    "Conflict Resolution"
-  ],
-  "tools": {
+  "skills": {
     "languages": [
       "HTML",
       "CSS",

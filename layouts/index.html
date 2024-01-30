@@ -54,20 +54,11 @@
           <h2>Skills</h2>
         </div>
         <div class="col-md">
-          {{ delimit $resume.skills  ", " }}
-        </div>
-      </div>
-
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Tools</h2>
-        </div>
-        <div class="col-md">
-          <strong>Languages:</strong> {{ delimit $resume.tools.languages ", " }}
+          <strong>Languages:</strong> {{ delimit $resume.skills.languages ", " }}
           <br>
-          <strong>Frameworks:</strong> {{ delimit $resume.tools.frameworks ", " }}
+          <strong>Frameworks:</strong> {{ delimit $resume.skills.frameworks ", " }}
           <br>
-          <strong>Tooling:</strong> {{ delimit $resume.tools.tooling ", " }}
+          <strong>Tooling:</strong> {{ delimit $resume.skills.tooling ", " }}
         </div>
       </div>
 
