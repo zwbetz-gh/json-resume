@@ -25,6 +25,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="canonical" href="{{ $resume.basics.resume }}">
     <title>{{ $headTitle }}</title>
+    <!-- NOTE: Allow this file to be served from anywhere, so inline the assets -->
     <style>
       {{ $bundleCss.Content | safeCSS }}
     </style>
@@ -201,6 +202,7 @@
 
     </div>
 
+    <!-- NOTE: Allow this file to be served from anywhere, so inline the assets -->
     <script>
       {{ $mainJs.Content | safeJS }}
     </script>
