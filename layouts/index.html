@@ -77,17 +77,18 @@
             <strong>{{ $position_company }}</strong>
             <br>
             {{ printf "%s to %s" .startDate .endDate | safeHTML }}
-            <details
-              class="resume-highlights"
-              {{ if .showHighlights }}open{{ end }}
-            >
-              <summary>Highlights</summary>
-              <ul>
-                {{ range .highlights }}
-                  <li>{{ . }}</li>
-                {{ end }}
-              </ul>
-            </details>
+            <div class="resume-highlights">
+              <details
+                {{ if .showHighlights }}open{{ end }}
+              >
+                <summary>Highlights</summary>
+                <ul>
+                  {{ range .highlights }}
+                    <li>{{ . }}</li>
+                  {{ end }}
+                </ul>
+              </details>
+            </div>
           {{ end }}
         </div>
       </div>

@@ -1,9 +1,10 @@
 const handleBeforeprint = () => {
-  const details = document.querySelectorAll('details');
+  const boxes = document.querySelectorAll('.resume-highlights');
 
-  details.forEach((el) => {
-    el.open = true;
-  });
+  for (const box of boxes) {
+    const highlights = box.querySelectorAll('ul');
+    box.replaceChildren(...highlights);
+  }
 };
 
 window.addEventListener('beforeprint', handleBeforeprint);

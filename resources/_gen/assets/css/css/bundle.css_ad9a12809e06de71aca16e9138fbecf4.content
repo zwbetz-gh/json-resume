@@ -11263,8 +11263,6 @@ textarea.form-control-lg {
   }
 }
 
-/*# sourceMappingURL=bootstrap.css.map *//* resume */
-
 .resume {
   margin-top: 0.5rem;
 }
