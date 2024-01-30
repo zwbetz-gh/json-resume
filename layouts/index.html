@@ -7,12 +7,12 @@
 
 {{ $customCss := resources.Get "css/custom.css" }}
 
-{{ $bundledCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
+{{ $bundleCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
 
 {{ $mainJs := resources.Get "js/main.js" }}
 
 {{ if hugo.IsProduction }}
-  {{ $bundledCss = $bundledCss | minify | fingerprint | resources.PostProcess }}
+  {{ $bundleCss = $bundleCss | minify | fingerprint | resources.PostProcess }}
   {{ $mainJs = $mainJs | minify | fingerprint }}
 {{ end }}
 
@@ -25,7 +25,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="canonical" href="{{ $resume.basics.resume }}">
     <title>{{ $headTitle }}</title>
-    <link rel="stylesheet" href="{{ $bundledCss.RelPermalink }}" integrity="{{ $bundledCss.Data.Integrity }}">
+    <style>
+      {{ $bundleCss.Content | safeCSS }}
+    </style>
   </head>
   <body>
     <div class="container resume">
