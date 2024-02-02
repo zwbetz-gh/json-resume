@@ -1,3 +1,5 @@
+const oldHtml = document.body.innerHTML;
+
 const handleBeforeprint = () => {
   const boxes = document.querySelectorAll('.resume-highlights');
 
@@ -7,4 +9,9 @@ const handleBeforeprint = () => {
   }
 };
 
+const handleAfterprint = () => {
+  document.body.innerHTML = oldHtml;
+};
+
 window.addEventListener('beforeprint', handleBeforeprint);
+window.addEventListener('afterprint', handleAfterprint);
