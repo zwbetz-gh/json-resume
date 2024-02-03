@@ -3,7 +3,6 @@ languageCode: en-us
 title: My resume, in JSON
 disableKinds:
   - taxonomy
-  - taxonomyTerm
   - sitemap
 outputs:
   home:
