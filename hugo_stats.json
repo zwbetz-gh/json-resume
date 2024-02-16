@@ -22,14 +22,10 @@
       "ul"
     ],
     "classes": [
-      "col",
-      "col-md",
-      "col-md-3",
       "container",
       "resume",
       "resume-highlights",
-      "resume-section",
-      "row"
+      "resume-section"
     ],
     "ids": null
   }

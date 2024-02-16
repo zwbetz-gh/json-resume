@@ -34,172 +34,130 @@
   <body>
     <div class="container resume">
 
-      <div class="row resume-section">
-        <div class="col">
-          <h1>{{ $bodyTitle }}</h1>
-          <p>{{ $resume.basics.summary }}</p>
-        </div>
+      <div class="resume-section">
+        <h1>{{ $bodyTitle }}</h1>
+        <div>{{ $resume.basics.summary }}</div>
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Contact</h2>
-        </div>
-        <div class="col-md">
-          <strong>Email:</strong>
-          <a href="{{ $resume.basics.contact }}" target="_blank" rel="noreferrer">{{ $resume.basics.contact }}</a>
-        </div>
+      <div class="resume-section">
+        <h2>Contact</h2>
+        <strong>Email:</strong>
+        <a href="{{ $resume.basics.contact }}" target="_blank" rel="noreferrer">{{ $resume.basics.contact }}</a>
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Skills</h2>
-        </div>
-        <div class="col-md">
-          <strong>Languages & runtimes:</strong> {{ delimit $resume.skills.languages ", " }}
+      <div class="resume-section">
+        <h2>Skills</h2>
+        <strong>Languages & runtimes:</strong> {{ delimit $resume.skills.languages ", " }}
+        <br>
+        <strong>Frameworks:</strong> {{ delimit $resume.skills.frameworks ", " }}
+        <br>
+        <strong>Tooling:</strong> {{ delimit $resume.skills.tooling ", " }}
+      </div>
+
+      <div class="resume-section">
+        <h2>Work</h2>
+        {{ range $resume.work }}
+          {{ $freelance := "Freelance" }}
+          {{ $position_company := $freelance }}
+          {{ if ne .company $freelance }}
+            {{ $position_company = printf "%s at %s" .position .company }}
+          {{ end }}
+          <strong>{{ $position_company }}</strong>
           <br>
-          <strong>Frameworks:</strong> {{ delimit $resume.skills.frameworks ", " }}
-          <br>
-          <strong>Tooling:</strong> {{ delimit $resume.skills.tooling ", " }}
-        </div>
+          {{ printf "%s to %s" .startDate .endDate | safeHTML }}
+          <div class="resume-highlights">
+            <details
+              {{ if .showHighlights }}open{{ end }}
+            >
+              <summary>Highlights</summary>
+              <ul>
+                {{ range .highlights }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </details>
+          </div>
+        {{ end }}
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Work</h2>
-        </div>
-        <div class="col-md">
-          {{ range $resume.work }}
-            {{ $freelance := "Freelance" }}
-            {{ $position_company := $freelance }}
-            {{ if ne .company $freelance }}
-              {{ $position_company = printf "%s at %s" .position .company }}
-            {{ end }}
-            <strong>{{ $position_company }}</strong>
+      <div class="resume-section">
+        <h2>Education</h2>
+        {{ range $resume.education }}
+          <p>
+            <strong>{{ .institution }}</strong>
             <br>
             {{ printf "%s to %s" .startDate .endDate | safeHTML }}
-            <div class="resume-highlights">
-              <details
-                {{ if .showHighlights }}open{{ end }}
-              >
-                <summary>Highlights</summary>
-                <ul>
-                  {{ range .highlights }}
-                    <li>{{ . }}</li>
-                  {{ end }}
-                </ul>
-              </details>
-            </div>
-          {{ end }}
-        </div>
-      </div>
-
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Education</h2>
-        </div>
-        <div class="col-md">
-          <p>
-            {{ range $resume.education }}
-              <strong>{{ .institution }}</strong>
-              <br>
-              {{ printf "%s to %s" .startDate .endDate | safeHTML }}
-              <br>
-              {{ printf "%s, %s" .area .studyType }}
-            {{ end }}
+            <br>
+            {{ printf "%s, %s" .area .studyType }}
           </p>
-        </div>
+        {{ end }}
       </div>
 
       {{ with $resume.securityClearances }}
-        <div class="row resume-section">
-          <div class="col-md-3">
-            <h2>Clearances</h2>
-          </div>
-          <div class="col-md">
-            <ul>
-              {{ range . }}
-                <li>{{ .name }}</li>
-              {{ end }}
-            </ul>
-          </div>
+        <div class="resume-section">
+          <h2>Clearances</h2>
+          <ul>
+            {{ range . }}
+              <li>{{ .name }}</li>
+            {{ end }}
+          </ul>
         </div>
       {{ end }}
 
       {{ with $resume.certifications }}
-        <div class="row resume-section">
-          <div class="col-md-3">
-            <h2>Certifications</h2>
-          </div>
-          <div class="col-md">
-            <ul>
-              {{ range . }}
-                <li>{{ .name }}, {{ .date }}</li>
-              {{ end }}
-            </ul>
-          </div>
+        <div class="resume-section">
+          <h2>Certifications</h2>
+          <ul>
+            {{ range . }}
+              <li>{{ .name }}, {{ .date }}</li>
+            {{ end }}
+          </ul>
         </div>
       {{ end }}
 
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Awards</h2>
-        </div>
-        <div class="col-md">
-          {{ range $resume.awards }}
-            <p>
-              <strong>{{ .title }}</strong>
-              <br>
-              {{ .awarder }}, {{ .date }}
-            </p>
-          {{ end }}
-        </div>
+      <div class="resume-section">
+        <h2>Awards</h2>
+        {{ range $resume.awards }}
+          <p>
+            <strong>{{ .title }}</strong>
+            <br>
+            {{ .awarder }}, {{ .date }}
+          </p>
+        {{ end }}
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Peer Feedback</h2>
-        </div>
-        <div class="col-md">
-          {{ range $resume.peerFeedback }}
-            <p>
-              <strong>{{ .name }}</strong>
-              <br>
-              <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .url }}</a>
-            </p>
-          {{ end }}
-        </div>
+      <div class="resume-section">
+        <h2>Peer Feedback</h2>
+        {{ range $resume.peerFeedback }}
+          <p>
+            <strong>{{ .name }}</strong>
+            <br>
+            <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .url }}</a>
+          </p>
+        {{ end }}
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Writing Samples</h2>
-        </div>
-        <div class="col-md">
-          {{ range $resume.writingSamples }}
-            <p>
-              <strong>{{ .name }}</strong>
-              <br>
-              <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .url }}</a>
-            </p>
-          {{ end }}
-        </div>
+      <div class="resume-section">
+        <h2>Writing Samples</h2>
+        {{ range $resume.writingSamples }}
+          <p>
+            <strong>{{ .name }}</strong>
+            <br>
+            <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .url }}</a>
+          </p>
+        {{ end }}
       </div>
 
-      <div class="row resume-section">
-        <div class="col-md-3">
-          <h2>Profiles</h2>
-        </div>
-        <div class="col-md">
-          <ul>
-            {{ range $resume.basics.profiles }}
-              <li>
-                <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .username }}</a> on {{ .network }}
-              </li>
-            {{ end }}
-          </ul>
-        </div>
+      <div class="resume-section">
+        <h2>Profiles</h2>
+        <ul>
+          {{ range $resume.basics.profiles }}
+            <li>
+              <a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .username }}</a> on {{ .network }}
+            </li>
+          {{ end }}
+        </ul>
       </div>
 
     </div>
