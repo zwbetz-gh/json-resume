@@ -7,12 +7,12 @@
 
 {{ $customCss := resources.Get "css/custom.css" }}
 
-{{ $bundleCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
+{{ $bundledCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
 
 {{ $mainJs := resources.Get "js/main.js" }}
 
 {{ if hugo.IsProduction }}
-  {{ $bundleCss = $bundleCss | minify | fingerprint | resources.PostProcess }}
+  {{ $bundledCss = $bundledCss | minify | fingerprint | resources.PostProcess }}
   {{ $mainJs = $mainJs | minify | fingerprint }}
 {{ end }}
 
@@ -28,7 +28,7 @@
     <title>{{ $headTitle }}</title>
     <!-- NOTE: Allow this file to be served from anywhere, so inline the assets -->
     <style>
-      {{ $bundleCss.Content | safeCSS }}
+      {{ $bundledCss.Content | safeCSS }}
     </style>
   </head>
   <body>
