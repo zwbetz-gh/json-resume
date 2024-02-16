@@ -36,22 +36,26 @@
 
       <div class="resume-section">
         <h1>{{ $bodyTitle }}</h1>
-        <div>{{ $resume.basics.summary }}</div>
+        <p>{{ $resume.basics.summary }}</p>
       </div>
 
       <div class="resume-section">
         <h2>Contact</h2>
-        <strong>Email:</strong>
-        <a href="{{ $resume.basics.contact }}" target="_blank" rel="noreferrer">{{ $resume.basics.contact }}</a>
+        <p>
+          <strong>Email:</strong>
+          <a href="{{ $resume.basics.contact }}" target="_blank" rel="noreferrer">{{ $resume.basics.contact }}</a>
+        </p>
       </div>
 
       <div class="resume-section">
         <h2>Skills</h2>
-        <strong>Languages & runtimes:</strong> {{ delimit $resume.skills.languages ", " }}
-        <br>
-        <strong>Frameworks:</strong> {{ delimit $resume.skills.frameworks ", " }}
-        <br>
-        <strong>Tooling:</strong> {{ delimit $resume.skills.tooling ", " }}
+        <p>
+          <strong>Languages & runtimes:</strong> {{ delimit $resume.skills.languages ", " }}
+          <br>
+          <strong>Frameworks:</strong> {{ delimit $resume.skills.frameworks ", " }}
+          <br>
+          <strong>Tooling:</strong> {{ delimit $resume.skills.tooling ", " }}
+        </p>
       </div>
 
       <div class="resume-section">
