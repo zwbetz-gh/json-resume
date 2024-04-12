@@ -98,7 +98,7 @@
     {
       "company": "Framework IT Solutions",
       "position": "Developer Intern",
-      "website": "",
+      "website": null,
       "startDate": "2014-05",
       "endDate": "2015-05",
       "summary": "",
@@ -140,7 +140,7 @@
     {
       "company": "Louisiana State Employees' Retirement System",
       "position": "Retirement Benefits Analyst",
-      "website": "https://lasersonline.org",
+      "website": "https://lasersonline.org/",
       "startDate": "2011-05",
       "endDate": "2011-08",
       "summary": "",
@@ -153,7 +153,7 @@
     {
       "company": "DETEL Computer Solutions",
       "position": "System Builder",
-      "website": "",
+      "website": "https://www.detel.com/",
       "startDate": "2008-05",
       "endDate": "2010-08",
       "summary": "",
