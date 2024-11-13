@@ -4,9 +4,9 @@ My resume, in JSON
 
 ## Links
 
-- [Source JSON](data/resume.json)
-- [Source template](layouts/index.html)
-- [Deployed HTML](https://zwbetz.com/resume/resume.html)
+- Source [JSON](data/resume.json)
+- Source [hugo template](layouts/index.html)
+- Deployed [HTML](https://zwbetz.com/resume/resume.html)
 
 ## Credits
 
