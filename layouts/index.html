@@ -7,7 +7,7 @@
 
 {{ $customCss := resources.Get "css/custom.css" }}
 
-{{ $bundledCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | resources.PostCSS }}
+{{ $bundledCss := slice $bootstrapCss $customCss | resources.Concat "css/bundle.css" | css.PostCSS }}
 
 {{ $mainJs := resources.Get "js/main.js" }}
 
